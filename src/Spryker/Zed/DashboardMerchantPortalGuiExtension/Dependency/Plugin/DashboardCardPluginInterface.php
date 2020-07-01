@@ -7,36 +7,17 @@
 
 namespace Spryker\Zed\DashboardMerchantPortalGuiExtension\Dependency\Plugin;
 
+use Generated\Shared\Transfer\DashboardCardTransfer;
+
 interface DashboardCardPluginInterface
 {
     /**
      * Specification:
-     * - Returns HTML for the card title.
+     * - Returns the data for displaying the dashboard card.
      *
      * @api
      *
-     * @return string
+     * @return \Generated\Shared\Transfer\DashboardCardTransfer
      */
-    public function getTitle(): string;
-
-    /**
-     * Specification:
-     * - Returns HTML for the card content.
-     *
-     * @api
-     *
-     * @return string
-     */
-    public function getContent(): string;
-
-    /**
-     * Specification:
-     * - Returns array of DashboardActionButton transfers.
-     * - Each DashboardActionButton transfer contains the data for displaying the corresponding button.
-     *
-     * @api
-     *
-     * @return \Generated\Shared\Transfer\DashboardActionButtonTransfer[]
-     */
-    public function getActionButtons(): array;
+    public function getDashboardCard(): DashboardCardTransfer;
 }
